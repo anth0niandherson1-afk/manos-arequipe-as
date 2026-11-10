@@ -1,0 +1,793 @@
+/* ==========================================
+   MANOS AREQUIPEÑAS SMARTAPP
+   ESTILOS GENERALES
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #eaddd3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+========================================== */
+
+.phone-container {
+    width: 100%;
+    max-width: 410px;
+    height: min(820px, calc(100dvh - 20px));
+    min-height: 500px;
+
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 32px;
+    border: 8px solid #cbb8aa;
+
+    box-shadow: 0 20px 40px rgba(93, 64, 55, 0.2);
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ==========================================
+   SISTEMA DE PANTALLAS
+========================================== */
+
+.app-page {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+.app-page.active {
+    display: flex;
+}
+
+/* ==========================================
+   CABECERAS
+========================================== */
+
+.page-header {
+    background-color: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+
+    padding: 20px 16px;
+
+    border-bottom: 1px solid rgba(212, 197, 185, 0.4);
+
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.page-header h2 {
+    font-size: 18px;
+    color: #4e342e;
+}
+
+.page-header p {
+    font-size: 12px;
+    color: #8d6e63;
+    margin-top: 5px;
+}
+
+.saludo {
+    font-weight: bold;
+    color: #e67e22 !important;
+}
+
+/* ==========================================
+   CONTENIDO DE LAS PANTALLAS
+========================================== */
+
+.page-content {
+    flex: 1;
+    min-height: 0;
+
+    padding: 20px 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.page-content.scrollable {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    /* Espacio para que el menú no tape contenido */
+    padding-bottom: 90px;
+}
+
+.page-content.scrollable::-webkit-scrollbar {
+    width: 5px;
+}
+
+.page-content.scrollable::-webkit-scrollbar-thumb {
+    background-color: rgba(141, 110, 99, 0.35);
+    border-radius: 10px;
+}
+
+.center-flex {
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================
+   CARA 1: PANTALLA DE INICIO
+========================================== */
+
+.splash-content {
+    margin: auto;
+
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.85);
+
+    padding: 30px 20px;
+
+    border-radius: 20px;
+
+    width: 85%;
+    max-width: 340px;
+
+    border: 1px solid white;
+
+    box-shadow: 0 10px 30px rgba(93, 64, 55, 0.15);
+
+    animation: aparecer 0.8s ease;
+}
+
+.splash-logo {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.splash-content h1 {
+    font-size: 26px;
+    color: #4e342e;
+}
+
+.splash-sub {
+    font-size: 13px;
+    color: #8d6e63;
+    margin: 8px 0 25px;
+}
+
+/* ==========================================
+   BOTONES GENERALES
+========================================== */
+
+button {
+    font-family: inherit;
+    transition: all 0.25s ease;
+}
+
+.btn-action {
+    width: 100%;
+
+    background-color: #8d6e63;
+    color: white;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.btn-action:hover {
+    background-color: #6d4c41;
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 12px rgba(93, 64, 55, 0.2);
+}
+
+button:focus-visible,
+.product-card:focus-visible,
+.alt-card:focus-visible,
+.nav-link:focus-visible {
+    outline: 3px solid #e67e22;
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   CARA 2: REGISTRO
+========================================== */
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(212, 197, 185, 0.4);
+}
+
+.input-field label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #705d56;
+}
+
+.input-field input {
+    width: 100%;
+
+    border: 1px solid #d4c5b9;
+
+    padding: 11px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+    color: #4e342e;
+
+    background-color: #fdfbf7;
+
+    outline: none;
+
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.input-field input:focus {
+    border-color: #a1887f;
+
+    box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.12);
+}
+
+/* ==========================================
+   CARA 3: CATÁLOGO
+========================================== */
+
+.main-featured-card {
+    background-color: rgba(255, 255, 255, 0.94);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(212, 197, 185, 0.4);
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.main-featured-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 20px rgba(93, 64, 55, 0.15);
+}
+
+.main-featured-card img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.featured-badge {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    background-color: #e67e22;
+    color: white;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    z-index: 2;
+}
+
+.featured-info {
+    padding: 16px;
+    text-align: center;
+}
+
+.featured-info h3 {
+    font-size: 16px;
+    color: #4e342e;
+}
+
+.featured-info p {
+    font-size: 15px;
+    color: #e67e22;
+
+    font-weight: bold;
+
+    margin: 4px 0 10px;
+}
+
+.fake-link-btn,
+.btn-select-featured {
+    display: inline-block;
+
+    background-color: #8d6e63;
+    color: white;
+
+    border: none;
+
+    padding: 9px 20px;
+
+    border-radius: 15px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* ==========================================
+   CUADRÍCULA DE PRODUCTOS
+========================================== */
+
+.sub-title {
+    font-size: 14px;
+    color: #4e342e;
+    margin-top: 10px;
+}
+
+.product-grid-four {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 7px;
+}
+
+.mini-product-card {
+    background-color: rgba(255, 255, 255, 0.94);
+
+    padding: 6px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    border: 1px solid rgba(212, 197, 185, 0.3);
+
+    min-width: 0;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mini-product-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 5px 12px rgba(93, 64, 55, 0.15);
+}
+
+.mini-product-card img {
+    width: 100%;
+    height: 65px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    display: block;
+}
+
+.mini-product-card span {
+    font-size: 9px;
+    color: #5d4037;
+
+    display: block;
+
+    margin-top: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==========================================
+   CARA 4: DETALLES DEL PRODUCTO
+========================================== */
+
+.detail-container {
+    background-color: rgba(255, 255, 255, 0.94);
+
+    border-radius: 16px;
+
+    padding: 16px;
+
+    text-align: center;
+
+    border: 1px solid rgba(212, 197, 185, 0.4);
+
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.08);
+}
+
+.detail-big-img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    margin-bottom: 12px;
+
+    display: block;
+}
+
+.detail-container h3 {
+    font-size: 18px;
+    color: #4e342e;
+}
+
+.detail-price {
+    font-size: 18px;
+    color: #e67e22;
+
+    font-weight: bold;
+
+    margin: 6px 0 14px;
+}
+
+.btn-buy-now {
+    width: 100%;
+
+    background-color: #2ecc71;
+    color: white;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn-buy-now:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   PRODUCTOS ALTERNATIVOS
+========================================== */
+
+.sub-title-secondary {
+    font-size: 13px;
+    color: #705d56;
+    margin-top: 15px;
+}
+
+.alternative-grid {
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding: 4px 2px 8px;
+}
+
+.alternative-grid::-webkit-scrollbar {
+    height: 4px;
+}
+
+.alternative-grid::-webkit-scrollbar-thumb {
+    background-color: #cbb8aa;
+    border-radius: 10px;
+}
+
+.alt-card {
+    background-color: rgba(255, 255, 255, 0.9);
+
+    padding: 10px 14px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    border-radius: 15px;
+
+    color: #4e342e;
+
+    cursor: pointer;
+
+    border: 1px solid rgba(212, 197, 185, 0.3);
+
+    transition: all 0.2s;
+}
+
+.alt-card:hover {
+    background-color: #8d6e63;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   CARA 5: CONTACTO Y PEDIDO
+========================================== */
+
+.contact-box {
+    background-color: rgba(255, 255, 255, 0.96);
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    text-align: center;
+
+    border: 1px solid rgba(212, 197, 185, 0.4);
+
+    width: 100%;
+
+    box-shadow: 0 10px 25px rgba(93, 64, 55, 0.12);
+}
+
+.badge-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.contact-box h3 {
+    color: #4e342e;
+    font-size: 18px;
+}
+
+.summary-text {
+    font-size: 12px;
+    color: #705d56;
+    margin: 8px 0 16px;
+}
+
+.summary-ticket {
+    background-color: #fdfbf7;
+
+    border: 1px dashed #d4c5b9;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    text-align: left;
+
+    font-size: 13px;
+    color: #4e342e;
+
+    margin-bottom: 20px;
+
+    overflow-wrap: anywhere;
+}
+
+.summary-ticket p {
+    margin-bottom: 8px;
+}
+
+.envio-tag {
+    font-size: 11px;
+    font-weight: bold;
+    color: #d35400;
+    margin-top: 4px;
+}
+
+.btn-whatsapp {
+    width: 100%;
+
+    background-color: #25D366;
+    color: white;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 25px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1da851;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   MENÚ DE NAVEGACIÓN INFERIOR
+========================================== */
+
+.bottom-navigation {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    background-color: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(8px);
+
+    display: none;
+
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 10px 4px;
+
+    border-top: 1px solid rgba(212, 197, 185, 0.4);
+
+    z-index: 100;
+}
+
+.bottom-navigation.visible {
+    display: flex;
+}
+
+.nav-link {
+    text-decoration: none;
+
+    color: #a1887f;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    font-size: 14px;
+
+    gap: 3px;
+
+    padding: 4px 12px;
+
+    border-radius: 10px;
+
+    transition: all 0.2s;
+}
+
+.nav-link span {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    background-color: #f5eee9;
+}
+
+.nav-link.active {
+    color: #4e342e;
+    font-weight: bold;
+}
+
+/* ==========================================
+   ANIMACIONES
+========================================== */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   ADAPTACIÓN PARA CELULARES
+========================================== */
+
+@media (max-width: 420px) {
+
+    body {
+        padding: 0;
+        background-color: #eaddd3;
+    }
+
+    .phone-container {
+        max-width: 100%;
+        width: 100%;
+
+        height: 100vh;
+        height: 100dvh;
+
+        min-height: 0;
+
+        border-radius: 0;
+        border: none;
+    }
+
+    .product-grid-four {
+        gap: 5px;
+    }
+
+    .mini-product-card {
+        padding: 4px;
+    }
+
+    .mini-product-card img {
+        height: 60px;
+    }
+
+    .mini-product-card span {
+        font-size: 8px;
+    }
+
+    .page-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+/* ==========================================
+   PANTALLAS PEQUEÑAS
+========================================== */
+
+@media (max-height: 600px) {
+
+    .page-header {
+        padding: 12px;
+    }
+
+    .page-content {
+        padding-top: 12px;
+    }
+
+    .splash-content {
+        padding: 18px;
+    }
+
+    .splash-logo {
+        font-size: 45px;
+    }
+
+    .detail-big-img {
+        height: 140px;
+    }
+}

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manos Arequipeñas SmartApp</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="phone-container">
+
+        <!-- ====================================== -->
+        <!-- CARA 1: PANTALLA DE INICIO -->
+        <!-- ====================================== -->
+
+        <section id="cara1" class="app-page active">
+
+            <div class="splash-content">
+
+                <div class="splash-logo">🧶</div>
+
+                <h1>Manos Arequipeñas</h1>
+
+                <p class="splash-sub">
+                    Tradición hilada en fibra de alpaca
+                </p>
+
+                <button type="button" id="btnIngresarApp" class="btn-action">
+                    Ingresar a la Tienda
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================== -->
+        <!-- CARA 2: REGISTRO DEL CLIENTE -->
+        <!-- ====================================== -->
+
+        <section id="cara2" class="app-page">
+
+            <div class="page-header">
+
+                <h2>📋 Registro de Cliente</h2>
+
+                <p>
+                    Ingresa tus datos para personalizar el catálogo y tus envíos.
+                </p>
+
+            </div>
+
+            <div class="page-content">
+
+                <div class="input-field">
+
+                    <label for="clienteNombre">Nombre Completo:</label>
+
+                    <input
+                        type="text"
+                        id="clienteNombre"
+                        placeholder="Ej. Juan Pérez"
+                        autocomplete="name"
+                        maxlength="60"
+                        required
+                    >
+
+                </div>
+
+                <div class="input-field">
+
+                    <label for="clienteCiudad">Ciudad de Destino:</label>
+
+                    <input
+                        type="text"
+                        id="clienteCiudad"
+                        placeholder="Ej. Arequipa, Lima, Cusco..."
+                        autocomplete="address-level2"
+                        maxlength="60"
+                        required
+                    >
+
+                </div>
+
+                <button type="button" id="btnGuardarRegistro" class="btn-action">
+                    Continuar al Catálogo
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================== -->
+        <!-- CARA 3: CATÁLOGO PRINCIPAL -->
+        <!-- ====================================== -->
+
+        <section id="cara3" class="app-page">
+
+            <div class="page-header">
+
+                <h2>🔍 Catálogo Artesanal</h2>
+
+                <p id="saludoCliente" class="saludo"></p>
+
+            </div>
+
+            <div class="page-content scrollable">
+
+                <!-- PRODUCTO DESTACADO -->
+
+                <div
+                    class="main-featured-card product-card"
+                    data-nombre="Chompa Arequipeña Imperial"
+                    data-precio="180"
+                    data-img="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Ver Chompa Arequipeña Imperial"
+                >
+
+                    <span class="featured-badge">
+                        ⭐ RECOMENDADO
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600"
+                        alt="Prenda de vestir de estilo artesanal"
+                        loading="lazy"
+                    >
+
+                    <div class="featured-info">
+
+                        <h3>Chompa Arequipeña Imperial</h3>
+
+                        <p>S/ 180.00</p>
+
+                        <span class="fake-link-btn">
+                            Ver Detalles
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OTROS PRODUCTOS -->
+
+                <h3 class="sub-title">Otras Variedades</h3>
+
+                <div class="product-grid-four">
+
+                    <!-- BUFANDA -->
+
+                    <div
+                        class="mini-product-card product-card"
+                        data-nombre="Bufanda Fina"
+                        data-precio="65"
+                        data-img="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600"
+                        role="button"
+                        tabindex="0"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600"
+                            alt="Accesorio de vestir"
+                            loading="lazy"
+                        >
+
+                        <span>Bufanda</span>
+
+                    </div>
+
+
+                    <!-- CHULLO -->
+
+                    <div
+                        class="mini-product-card product-card"
+                        data-nombre="Chullo Ancestral"
+                        data-precio="45"
+                        data-img="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600"
+                        role="button"
+                        tabindex="0"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600"
+                            alt="Prenda de invierno"
+                            loading="lazy"
+                        >
+
+                        <span>Chullo</span>
+
+                    </div>
+
+
+                    <!-- GUANTES -->
+
+                    <div
+                        class="mini-product-card product-card"
+                        data-nombre="Guantes Fibra"
+                        data-precio="35"
+                        data-img="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600"
+                        role="button"
+                        tabindex="0"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600"
+                            alt="Accesorio de vestir"
+                            loading="lazy"
+                        >
+
+                        <span>Guantes</span>
+
+                    </div>
+
+
+                    <!-- MANTA -->
+
+                    <div
+                        class="mini-product-card product-card"
+                        data-nombre="Manta Andina"
+                        data-precio="220"
+                        data-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600"
+                        role="button"
+                        tabindex="0"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600"
+                            alt="Textil decorativo"
+                            loading="lazy"
+                        >
+
+                        <span>Manta</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================== -->
+        <!-- CARA 4: DETALLES DEL PRODUCTO -->
+        <!-- ====================================== -->
+
+        <section id="cara4" class="app-page">
+
+            <div class="page-header">
+
+                <h2>💎 Detalles de la Prenda</h2>
+
+            </div>
+
+            <div class="page-content scrollable">
+
+                <div class="detail-container">
+
+                    <img
+                        id="detalleImagen"
+                        src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600"
+                        alt="Prenda seleccionada"
+                        class="detail-big-img"
+                    >
+
+                    <h3 id="detalleNombre">
+                        Chompa Arequipeña Imperial
+                    </h3>
+
+                    <p id="detallePrecio" class="detail-price">
+                        S/ 180.00
+                    </p>
+
+                    <button
+                        type="button"
+                        id="btnQuieroComprar"
+                        class="btn-buy-now"
+                    >
+                        ✨ ¡Quiero comprar!
+                    </button>
+
+                </div>
+
+
+                <!-- PRODUCTOS ALTERNATIVOS -->
+
+                <h3 class="sub-title-secondary">
+                    Explora otros modelos
+                </h3>
+
+                <div class="alternative-grid">
+
+                    <div
+                        class="alt-card product-card"
+                        data-nombre="Chompa Arequipeña Imperial"
+                        data-precio="180"
+                        data-img="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600"
+                        role="button"
+                        tabindex="0"
+                    >
+                        Chompa Imperial
+                    </div>
+
+                    <div
+                        class="alt-card product-card"
+                        data-nombre="Bufanda Fina"
+                        data-precio="65"
+                        data-img="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600"
+                        role="button"
+                        tabindex="0"
+                    >
+                        Bufanda Fina
+                    </div>
+
+                    <div
+                        class="alt-card product-card"
+                        data-nombre="Chullo Ancestral"
+                        data-precio="45"
+                        data-img="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600"
+                        role="button"
+                        tabindex="0"
+                    >
+                        Chullo Ancestral
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================== -->
+        <!-- CARA 5: CONFIRMACIÓN DEL PEDIDO -->
+        <!-- ====================================== -->
+
+        <section id="cara5" class="app-page">
+
+            <div class="page-header">
+
+                <h2>🤝 Confirmar Orden</h2>
+
+            </div>
+
+            <div class="page-content center-flex">
+
+                <div class="contact-box">
+
+                    <div class="badge-icon">🦙</div>
+
+                    <h3>¡Tu pedido está listo!</h3>
+
+                    <p class="summary-text">
+                        Doña Elena preparará tu prenda con el mayor cuidado
+                        artesanal desde Yanahuara, Arequipa.
+                    </p>
+
+
+                    <!-- RESUMEN DEL PEDIDO -->
+
+                    <div class="summary-ticket">
+
+                        <p>
+                            <b>Producto:</b>
+                            <span id="resumenProducto">
+                                Chompa Arequipeña Imperial
+                            </span>
+                        </p>
+
+                        <p>
+                            <b>Total:</b>
+                            S/ <span id="resumenPrecio">180.00</span>
+                        </p>
+
+                        <p>
+                            <b>Cliente:</b>
+                            <span id="resumenCliente">Pendiente</span>
+                        </p>
+
+                        <p>
+                            <b>Destino:</b>
+                            <span id="resumenCiudad">Pendiente</span>
+                        </p>
+
+                        <p id="envioStatus" class="envio-tag">
+                            🟠 Envío regular a coordinar por chat
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="btnDespacharWhatsApp"
+                        class="btn-whatsapp"
+                    >
+                        💬 Hacer pedido por WhatsApp
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================== -->
+        <!-- MENÚ DE NAVEGACIÓN INFERIOR -->
+        <!-- ====================================== -->
+
+        <nav id="appNav" class="bottom-navigation" aria-label="Navegación principal">
+
+            <a href="#cara3" data-target="cara3" class="nav-link active">
+                🔍 <span>Catálogo</span>
+            </a>
+
+            <a href="#cara4" data-target="cara4" class="nav-link">
+                💎 <span>Detalles</span>
+            </a>
+
+            <a href="#cara5" data-target="cara5" class="nav-link">
+                🤝 <span>Contacto</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- ====================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ====================================== -->
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
